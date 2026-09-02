@@ -11,10 +11,10 @@
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
         ListNode temp=head;
-        ListNode dummy=new ListNode(0);
-        ListNode newtemp=dummy;
-        HashSet<Integer>map=new HashSet<>();
-        while(temp!=null){
+      //  ListNode dummy=new ListNode(0);
+       // ListNode newtemp=dummy;
+        //HashSet<Integer>map=new HashSet<>();
+      /*  while(temp!=null){
             if(!map.contains(temp.val)){
                 map.add(temp.val);
             newtemp.next=new ListNode(temp.val);
@@ -23,6 +23,15 @@ class Solution {
                         temp=temp.next;
 
         }
-        return dummy.next;
-    }
+        return dummy.next;*/
+        while(temp!=null && temp.next!=null){
+            if(temp.val==temp.next.val){
+                temp.next=temp.next.next;
+            }else{
+                temp=temp.next;
+            }
+        }
+            return head;
+        }
+    
 }
