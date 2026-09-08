@@ -17,12 +17,12 @@ class Solution {
     private List<Integer> res;
     public List<Integer> largestValues(TreeNode root) {
         res = new ArrayList<>();
-        dfs(root, 0);
+        bfs(root, 0);
 
         return res;
     }
 
-    private void dfs(TreeNode root, int level) {
+    private void bfs(TreeNode root, int level) {
         if (root != null) {
             int val = root.val;
             
@@ -31,8 +31,8 @@ class Solution {
             else 
                 res.set(level, Math.max(res.get(level), val));
             
-            dfs(root.left, level + 1);
-            dfs(root.right, level + 1);
+            bfs(root.left, level + 1);
+            bfs(root.right, level + 1);
         }
     }
 }
